@@ -1,7 +1,9 @@
-const express = require('express');
-const path = require('path');
+//const express = require('express');
+import express from 'express';
+import path from 'path';
+//const path = require('path');
 
-const startServer = (options) => {
+export const startServer = (options) => {
   //Desestructuro el parametro.
   const {port, public_path = 'public'} = options;
   
@@ -19,11 +21,5 @@ const startServer = (options) => {
   //Permite abrir un puerto y escuchar por el.
   app.listen(port, () => {
     console.log(`Escuchando en el puerto ${port}`);
-
   });
 };
-
-
-module.exports = {
-  startServer
-}
